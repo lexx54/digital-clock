@@ -6,8 +6,13 @@
     <title>Digital Clock</title>
     <link rel="stylesheet" href="../normalize.css" />
     <style>
+      :root {
+        --background-color: #02020a;
+        --corner-color: #05204a;
+        --letter-color: #e1e2ef;
+      }
       body {
-        background-color: black;
+        background-color: var(--background-color);
         /* display: flex;
         justify-content: center;
         align-items: center; */
@@ -18,14 +23,33 @@
         font-size: 6em;
 
         justify-content: center;
-        width: 50%;
+        /* width: 50%; */
       }
       #clock-content {
         /* margin: 10px auto; */
+        color: var(--letter-color);
       }
       #hours {
-        background-color: cornsilk;
+        padding: 20px;
+        background-color: var(--corner-color);
         border-radius: 25%;
+      }
+      #minutes {
+        padding: 20px;
+        background-color: var(--corner-color);
+        border-radius: 25%;
+      }
+      #seconds {
+        padding: 20px;
+        background-color: var(--corner-color);
+        border-radius: 25%;
+      }
+      @media screen and (max-width: 580px) {
+        #clock-content {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+        }
       }
     </style>
   </head>
