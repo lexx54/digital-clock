@@ -20,35 +20,59 @@
       #clock-container {
         margin: 15% auto auto;
         display: flex;
-        font-size: 6em;
+        /* flex-direction: column; */
+        /* font-size: 6em; */
 
         justify-content: center;
         /* width: 50%; */
       }
-      #clock-content {
+      
+      .content {
         /* margin: 10px auto; */
         color: var(--letter-color);
+        /* font-size: 6em; */
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 0 10px;
+      }
+      #clock-description {
+        color: var(--letter-color);
+        font-size: 3em;
       }
       #hours {
         padding: 20px;
         background-color: var(--corner-color);
         border-radius: 25%;
+        font-size: 5em;
       }
       #minutes {
         padding: 20px;
         background-color: var(--corner-color);
         border-radius: 25%;
+        font-size: 5em;
       }
       #seconds {
         padding: 20px;
         background-color: var(--corner-color);
         border-radius: 25%;
+        font-size: 5em;
+      }
+      .desc{
+        font-size: 1.5em;
+        margin-top: 10px;
       }
       @media screen and (max-width: 580px) {
-        #clock-content {
-          display: flex;
+        #clock-container {
           flex-direction: column;
           align-items: center;
+        }
+        .content{
+          /* margin-top: 10px; */
+        }
+        .desc{
+          order: -1;
+          margin-bottom: 10px;
         }
       }
     </style>
@@ -56,11 +80,20 @@
   <body>
     <section id="clock-container">
       <p id="clock-content">
-        <span id="hours"></span>
-        :
-        <span id="minutes"></span>
-        :
-        <span id="seconds"></span>
+        <div class="content">
+          <span id="hours"></span>
+          <span class="desc">Hour</span>
+        </div>
+
+        <div class="content">
+          <span id="minutes"></span>
+          <span class="desc">Minutes</span>
+        </div>
+        
+        <div class="content">
+          <span id="seconds"></span>
+          <span class="desc">Seconds</span>
+        </div>
       </p>
     </section>
     <script>
