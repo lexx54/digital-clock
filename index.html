@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Digital Clock</title>
+    <link rel="stylesheet" href="../normalize.css" />
+    <style>
+      body {
+        background-color: black;
+        /* display: flex;
+        justify-content: center;
+        align-items: center; */
+      }
+      #clock-container {
+        margin: 15% auto auto;
+        display: flex;
+        font-size: 6em;
+
+        justify-content: center;
+        width: 50%;
+      }
+      #clock-content {
+        /* margin: 10px auto; */
+      }
+      #hours {
+        background-color: cornsilk;
+        border-radius: 25%;
+      }
+    </style>
+  </head>
+  <body>
+    <section id="clock-container">
+      <p id="clock-content">
+        <span id="hours"></span>
+        :
+        <span id="minutes"></span>
+        :
+        <span id="seconds"></span>
+      </p>
+    </section>
+    <script>
+      const $hours = document.getElementById("hours");
+      const $min = document.getElementById("minutes");
+      const $seconds = document.getElementById("seconds");
+
+      function setTime() {
+        const now = new Date(),
+          hour = now.getHours(),
+          min = now.getMinutes(),
+          sec = now.getSeconds();
+
+        $hours.textContent = hour;
+        $min.textContent = min;
+        $seconds.textContent = sec;
+      }
+
+      setInterval(setTime, 1000);
+      // $seconds.textContent = countSec;
+    </script>
+  </body>
+</html>
